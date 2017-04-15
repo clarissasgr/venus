@@ -1,0 +1,17 @@
+{
+  "name": "venus",
+  "homepage": "https://github.com/clarissasgr/venus",
+  "description": "ArcTouch Front-end Code Challenge",
+  "main": "",
+  "authors": [
+    "Clarissa Grando <clarissa.sgr@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
