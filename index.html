@@ -75,7 +75,7 @@
     <div id="second-shave-wrapper" class="overflow-hidden absolute">
         <img id="second-shave" class="relative middle" src="assets/images/ice2.png"/>
     </div>
-    <div id="thrid-shave-wrapper" class="overflow-hidden absolute">
+    <div id="third-shave-wrapper" class="overflow-hidden absolute">
         <img id="third-shave" class="relative middle" src="assets/images/iceTop.png"/>
     </div>
     <div id="fourth-shave-wrapper" class="overflow-hidden absolute">
@@ -106,13 +106,13 @@
             .to('#second-shave-wrapper', .5, {left: "-300px"})
             .to('#second-shave', .5, {left: "300px"}, "-=.5")
             .to("#full-razor", 1.5, {left:"-180px", top: "-200px", rotation: 10, ease: Power1.easeOut}, "-=.9")
-            .set("#full-razor", {css:{transform: "rotateZ(-90deg)", top: "-480px", left:"-740px"}})
+            .set("#full-razor", {css:{transform: "rotateZ(-100deg)", top: "-480px", left:"-740px"}})
 
             //third shave
             .to("#banner", .65, {})
-            .to('#third-shave-wrapper', .5, {left: "-300px"})
-            .to('#third-shave', .5, {left: "300px"}, "-=.75")
-            .to('#full-razor', .5, {left:"100px", rotation:-110, ease: Power1.easeOut}, "-=.9")
+            .to('#third-shave-wrapper', .5, {left: "300px"})
+            .to('#third-shave', .5, {left: "-300px"}, "-=.5")
+            .to('#full-razor', 1.5, {left:"100px", rotation:-110, ease: Power1.easeOut}, "-=.95")
             .set("#full-razor", {css:{top: "270px", left: "290px", transform: "rotateZ(90deg)"}})
 
             //fourth shave
