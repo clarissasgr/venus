@@ -54,18 +54,21 @@
             left: -200px;
             top: 124px;
         }
+        #first-shave{
+            top: -5px;
+        }
     </style>
 </head>
 <body>
 <div id="banner" class="overflow-hidden">
 
-    <!-- girl --->
+    <!-- girl -->
     <img class="absolute back" src="assets/images/girlStrip.png"/>
     <img class="absolute back" src="assets/images/girlTop.png"/>
     <img class="absolute back" src="assets/images/girlBottom.png"/>
     <img id="cta" class="absolute front" src="assets/images/cta.png">
 
-    <!-- ice --->
+    <!-- ice -->
     <div id="first-shave-wrapper" class="overflow-hidden absolute">
         <img id="first-shave" class="relative middle" src="assets/images/ice1.png"/>
     </div>
@@ -79,10 +82,10 @@
         <img id="fourth-shave" class="last-ice relative middle" src="assets/images/ice3.png"/>
     </div>
 
-    <!-- logo --->
+    <!-- logo -->
     <img id="logo" class="absolute front" src="assets/images/logo.png"/>
 
-    <!-- razor --->
+    <!-- razor -->
     <img id="full-razor" class="absolute overflow-hidden" src="assets/images/razor.png"/>
     <img id="final-razor" class="absolute overflow-hidden front" src="assets/images/razorEnding.png"/>
 
@@ -92,7 +95,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         var tl = new TimelineMax();
         tl.to("#banner", 1, {})
-        //first shave
+            //first shave
             .to('#first-shave-wrapper', .5, {left: "300px"})
             .to('#first-shave', .5, {left: "-300px"}, "-=.5")
             .to("#full-razor", 1.0, {transformOrigin: "360px 200px", rotation: -160, ease: Power1.easeOut}, "-=.8")
@@ -103,12 +106,12 @@
             .to('#second-shave-wrapper', .5, {left: "-300px"})
             .to('#second-shave', .5, {left: "300px"}, "-=.5")
             .to("#full-razor", 1.5, {left:"-180px", top: "-200px", rotation: 10, ease: Power1.easeOut}, "-=.9")
-            .set("#full-razor", {css:{transform: "rotateZ(-90deg)", top: "-480px", left:"-340px"}})
+            .set("#full-razor", {css:{transform: "rotateZ(-90deg)", top: "-480px", left:"-740px"}})
 
             //third shave
             .to("#banner", .65, {})
             .to('#third-shave-wrapper', .5, {left: "-300px"})
-            .to('#third-shave', .5, {left: "300px"}, "-=.8")
+            .to('#third-shave', .5, {left: "300px"}, "-=.75")
             .to('#full-razor', .5, {left:"100px", rotation:-110, ease: Power1.easeOut}, "-=.9")
             .set("#full-razor", {css:{top: "270px", left: "290px", transform: "rotateZ(90deg)"}})
 
