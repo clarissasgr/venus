@@ -2,7 +2,7 @@
 
 ArcTouch's Front-end Gillette Venus Code Challenge
 
-##Getting started
+## Getting started
  1. Clone this repository
  
  ```
