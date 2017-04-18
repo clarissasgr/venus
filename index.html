@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gillette Venus Banner</title>
+    <script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
+    <style>
+        body{
+            background: gray;
+            margin: 0;
+            padding:0;
+        }
+        .overflow-hidden{
+            overflow: hidden;
+        }
+        .absolute{
+            position: absolute;
+        }
+        .relative{
+            position: relative;
+            left: 0;
+        }
+        .back{
+            z-index: 1;
+        }
+        .middle{
+            z-index: 2;
+        }
+        .front{
+            z-index: 4;
+        }
+        #banner{
+            width: 300px;
+            height: 250px;
+            position: relative;
+            margin: 0 auto;
+        }
+        #logo{
+            opacity: 0.9;
+        }
+        #cta{
+            bottom: 0;
+        }
+        .last-ice{
+            top: -25px;
+        }
+        #full-razor{
+            top: -380px;
+            left: -190px;
+            width: 70%;
+            z-index: 3;
+        }
+        #final-razor{
+            left: -200px;
+            top: 124px;
+        }
+        #first-shave{
+            top: -5px;
+        }
+    </style>
+</head>
+<body>
+<div id="banner" class="overflow-hidden">
+
+    <!-- girl -->
+    <img class="absolute back" src="assets/images/girlStrip.png"/>
+    <img class="absolute back" src="assets/images/girlTop.png"/>
+    <img class="absolute back" src="assets/images/girlBottom.png"/>
+    <img id="cta" class="absolute front" src="assets/images/cta.png">
+
+    <!-- ice -->
+    <div id="first-shave-wrapper" class="overflow-hidden absolute">
+        <img id="first-shave" class="relative middle" src="assets/images/ice1.png"/>
+    </div>
+    <div id="second-shave-wrapper" class="overflow-hidden absolute">
+        <img id="second-shave" class="relative middle" src="assets/images/ice2.png"/>
+    </div>
+    <div id="third-shave-wrapper" class="overflow-hidden absolute">
+        <img id="third-shave" class="relative middle" src="assets/images/iceTop.png"/>
+    </div>
+    <div id="fourth-shave-wrapper" class="overflow-hidden absolute">
+        <img id="fourth-shave" class="last-ice relative middle" src="assets/images/ice3.png"/>
+    </div>
+
+    <!-- logo -->
+    <img id="logo" class="absolute front" src="assets/images/logo.png"/>
+
+    <!-- razor -->
+    <img id="full-razor" class="absolute overflow-hidden" src="assets/images/razor.png"/>
+    <img id="final-razor" class="absolute overflow-hidden front" src="assets/images/razorEnding.png"/>
+
+</div>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        var tl = new TimelineMax();
+        tl.to("#banner", 1, {})
+            //first shave
+            .to('#first-shave-wrapper', .5, {left: "300px"})
+            .to('#first-shave', .5, {left: "-300px"}, "-=.5")
+            .to("#full-razor", 1.0, {transformOrigin: "360px 200px", rotation: -160, ease: Power1.easeOut}, "-=.8")
+            .set("#full-razor", {css:{scaleY: -1, left: "-140px", top:"-390px"}})
+
+            //second shave
+            .to("#banner", .65, {})
+            .to('#second-shave-wrapper', .5, {left: "-300px"})
+            .to('#second-shave', .5, {left: "300px"}, "-=.5")
+            .to("#full-razor", 1.5, {left:"-180px", top: "-200px", rotation: 10, ease: Power1.easeOut}, "-=.9")
+            .set("#full-razor", {css:{transform: "rotateZ(-100deg)", top: "-480px", left:"-740px"}})
+
+            //third shave
+            .to("#banner", .65, {})
+            .to('#third-shave-wrapper', .5, {left: "300px"})
+            .to('#third-shave', .5, {left: "-300px"}, "-=.5")
+            .to('#full-razor', 1.5, {left:"100px", rotation:-110, ease: Power1.easeOut}, "-=.95")
+            .set("#full-razor", {css:{top: "270px", left: "290px", transform: "rotateZ(90deg)"}})
+
+            //fourth shave
+            .to("#banner", .5, {})
+            .to('#fourth-shave-wrapper', .5, {left: "-300px"})
+            .to('#fourth-shave', .5, {left: "300px"}, "-=.5")
+            .to("#full-razor", 1.3, {left: "-670px", rotation: 110, top: "170px", ease: Power1.easeOut}, "-=.9")
+
+            //razor ending
+            .to("#final-razor", 0.5, {left: "4px", ease: Back.easeOut})
+    });
+</script>
+</body>
+</html>
